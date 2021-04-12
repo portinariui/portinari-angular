@@ -1,0 +1,35 @@
+<po-timeline [p-items]="items" [p-clickable]="clickable" (p-click)="clickEvent($event)" [p-mode]="mode"></po-timeline>
+
+<po-divider></po-divider>
+
+<div class="po-row">
+  <po-info class="po-md-6" p-label="Clicked Item" [p-value]="clickedItem"> </po-info>
+</div>
+
+<po-divider></po-divider>
+
+<div class="po-row">
+  <po-select name="color" class="po-md-3" p-label="Color" [(ngModel)]="newItem.color" [p-options]="colorsOptions">
+  </po-select>
+
+  <po-input class="po-md-3" [(ngModel)]="newItem.title" name="title" p-label="Title"> </po-input>
+
+  <po-textarea class="po-md-6" [(ngModel)]="newItem.description" name="description" p-label="Description">
+  </po-textarea>
+</div>
+
+<div class="po-row">
+  <po-button class="po-md-3" p-label="Add Item" (p-click)="addItem()"> </po-button>
+</div>
+
+<po-divider></po-divider>
+
+<div class="po-row">
+  <po-radio-group class="po-lg-6" name="mode" [(ngModel)]="mode" p-label="Mode" [p-options]="modeOptions">
+  </po-radio-group>
+  <po-switch class="po-lg-6" name="enableClickable" [(ngModel)]="clickable" p-label="Clickable"> </po-switch>
+</div>
+<po-divider></po-divider>
+<div class="po-row">
+  <po-button class="po-md-3" p-label="Sample Restore" (p-click)="restore()"> </po-button>
+</div>
